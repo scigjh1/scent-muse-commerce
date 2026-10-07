@@ -7,7 +7,7 @@ import { Suspense } from "react";
 import MobileMenu from "./mobile-menu";
 import Search, { SearchSkeleton } from "./search";
 
-const { SITE_NAME } = process.env;
+const SITE_NAME = process.env.SITE_NAME || "ScentMuse";
 
 export async function Navbar() {
   const menu = await getMenu("next-js-frontend-header-menu");
@@ -20,7 +20,7 @@ export async function Navbar() {
         </Suspense>
       </div>
       <div className="flex w-full items-center">
-        <div className="flex w-full md:w-1/3">
+        <div className="flex w-full md:w-2/5">
           <Link
             href="/"
             prefetch={true}

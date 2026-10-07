@@ -16,7 +16,7 @@ function SubmitButton({
   selectedVariantId: string | undefined;
 }) {
   const buttonClasses =
-    "relative flex w-full items-center justify-center rounded-full bg-blue-600 p-4 tracking-wide text-white";
+    "relative flex w-full items-center justify-center rounded-full bg-neutral-900 p-4 tracking-wide text-white";
   const disabledClasses = "cursor-not-allowed opacity-60 hover:opacity-60";
 
   if (!availableForSale) {
@@ -30,21 +30,21 @@ function SubmitButton({
   if (!selectedVariantId) {
     return (
       <button
-        aria-label="Please select an option"
+        aria-label="请选择容量"
         disabled
         className={clsx(buttonClasses, disabledClasses)}
       >
         <div className="absolute left-0 ml-4">
           <PlusIcon className="h-5" />
         </div>
-        Add To Cart
+        加入试香清单
       </button>
     );
   }
 
   return (
     <button
-      aria-label="Add to cart"
+      aria-label="加入试香清单"
       className={clsx(buttonClasses, {
         "hover:opacity-90": true,
       })}
@@ -52,7 +52,7 @@ function SubmitButton({
       <div className="absolute left-0 ml-4">
         <PlusIcon className="h-5" />
       </div>
-      Add To Cart
+      加入试香清单
     </button>
   );
 }

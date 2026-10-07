@@ -1,0 +1,3 @@
+import {getCart} from 'lib/shopify';
+import Link from 'next/link';
+export default async function Checkout(){const cart=await getCart();return <section className="mx-auto max-w-2xl px-6 py-20"><p className="text-xs tracking-[.3em] text-neutral-500">YOUR DISCOVERY LIST</p><h1 className="my-6 font-serif text-4xl">你的试香清单已准备好。</h1><p className="text-neutral-500">这是个人产品 Demo 的清单预览，不产生订单或真实付款。</p><ul className="my-8 space-y-4">{cart?.lines.map(line=><li key={line.id} className="flex justify-between border-b pb-4"><span>{line.merchandise.product.title} · {line.merchandise.title} × {line.quantity}</span><span>¥{line.cost.totalAmount.amount}</span></li>)}</ul><Link href="/search" className="rounded-full bg-black px-6 py-3 text-white">继续探索香氛</Link></section>}

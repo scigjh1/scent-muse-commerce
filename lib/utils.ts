@@ -20,6 +20,7 @@ export const ensureStartsWith = (stringToCheck: string, startsWith: string) =>
     : `${startsWith}${stringToCheck}`;
 
 export const validateEnvironmentVariables = () => {
+  if (!process.env.SHOPIFY_STORE_DOMAIN) return; // Local concept catalog
   const requiredEnvironmentVariables = [
     "SHOPIFY_STORE_DOMAIN",
     "SHOPIFY_STOREFRONT_ACCESS_TOKEN",

@@ -5,7 +5,8 @@ import LogoSquare from "components/logo-square";
 import { getMenu } from "lib/shopify";
 import { Suspense } from "react";
 
-const { COMPANY_NAME, SITE_NAME } = process.env;
+const COMPANY_NAME = "ScentMuse Concept";
+const SITE_NAME = "ScentMuse";
 
 export default async function Footer() {
   const currentYear = new Date().getFullYear();
@@ -64,7 +65,7 @@ export default async function Footer() {
           </p>
           <hr className="mx-4 hidden h-4 w-[1px] border-l border-neutral-400 md:inline-block" />
           <p>
-            <a href="https://github.com/vercel/commerce">View the source</a>
+            <a href="https://github.com/vercel/commerce">Upstream · Vercel Commerce</a>
           </p>
           <p className="md:ml-auto">
             <a href="https://vercel.com" className="text-black dark:text-white">
